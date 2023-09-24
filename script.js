@@ -5,8 +5,8 @@ const colorsArr = [
     'black',
     'yellow',
     'grey',
-    // 'violet',
-    // 'brown'
+    'violet',
+    'brown'
 ];
 
 const colorBox = document.querySelector('.color-box');
@@ -59,7 +59,7 @@ colorsEl.forEach(el => {
             type="text"
             name="userColors"
             value=${arrColor}
-            style ='display:none' 
+            style ='opacity: 0' 
             >
             <input class="input" 
             type="text" 
@@ -73,24 +73,7 @@ colorsEl.forEach(el => {
             btnBox.innerHTML = renderInput(arrColor)
         }
     });
-
 });
-
-const handlerSendler = (form) => {
-    let formData = new FormData(form);
-    let xhr = new XMLHttpRequest();
-
-    xhr.onreadystatechange = () => {
-        if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-                console.log('отправлено')
-            }
-        }
-    }
-    xhr.open('Post', 'mail.php', true);
-    xhr.send(formData)
-
-}
 
 
 
